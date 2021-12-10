@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 import './dummy_data.dart';
 import './category_item.dart';
 
@@ -8,15 +9,16 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Spicy Treats'),
+        title: const Text('Spicy Treats',),
       ),
       body: GridView(
         padding: const EdgeInsets.all(25),
         children: DUMMY_CATEGORIES
             .map(
               (catData) => CategoryItem(
-                    catData.title,
-                    catData.color,
+                catData.id, 
+                catData.title,
+                catData.color,
                   ),
             )
             .toList(),
