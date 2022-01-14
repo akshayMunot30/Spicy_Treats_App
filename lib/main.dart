@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import './categories_screen.dart';
-import 'category_meals_screen.dart';
+import '../screens/categories_screen.dart';
+import '../screens/category_meals_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -48,8 +48,11 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: CategoriesScreen(),
-      routes: {'/category-meals': (ctx) => CategoryMealsScreen()},
+      // home: CategoriesScreen(),
+      routes: {
+        '/': (ctx) => CategoriesScreen(),
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }
